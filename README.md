@@ -1,21 +1,46 @@
 # 🌍 Can Large Language Models Translate Spoken-Only Languages through International Phonetic Transcription?
 
-SO-LAN is a **spoken-only language dataset**, featuring one unique languages: **Bai** (`ISO 639-3: bfs`), alongside corresponding **Chinese** and **English** translations.
+[ 🤗Huggingface ]
+> coming soon
 
-## 🎙️ Data Collection
+This work introduces two key contributions to address the challenges of applying LLMs to spoken-only languages:
 
-To gather high-quality audio data, we developed **SOLAN App**, a custom-built Flutter application designed for efficient and
-seamless language recording.
+1. **UNILANG Framework**: A novel approach that enables LLMs to translate spoken-only languages using IPA as an intermediate representation.
+2. **SOLAN Dataset**: The first large-scale bilingual dataset featuring a spoken-only language, Bai, with aligned Chinese and English translations.
 
-## 🛠️ Data Processing
 
-We meticulously process the collected audio data to ensure clarity, accuracy, and usability for linguistic and machine
-learning research.
+## 🧠 UNILANG Framework
 
-## 🚀 Requirements
+UNILANG is the first framework designed to help LLMs understand and translate spoken-only languages by leveraging **automatic dictionary construction** and **knowledge retrieval**.
 
-To process the audio data, install the necessary dependencies:
+![](arch.png)
 
-```sh
-pip install sacrebleu # eval
-``` 
+![](auto.png)
+
+### Backbone
+
+- Qwen2.5 
+- Llama3
+- Gemma3
+
+## 📚 SOLAN Dataset
+
+**SOLAN** is a curated dataset for spoken-only language translation. It features the Bai language (`ISO 639-3: bfs`), along with professionally aligned Chinese and English translations.
+
+
+### 🎙️ Data Collection
+
+We developed the **SOLAN App**, a custom [Flutter](https://flutter.dev) application, to collect high-quality audio samples from native Bai speakers through in-person interviews.
+
+
+### 🛠️ Data Processing
+
+Each audio sample is carefully segmented, transcribed using **IPA**, and validated by linguistic experts to ensure it is suitable for both linguistic analysis and machine learning.
+
+### 🚀 Requirements
+
+To run the evaluation and processing scripts:
+
+```bash
+pip install sacrebleu
+```
